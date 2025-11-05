@@ -40,3 +40,19 @@ app.get('/hotel', async (req, res) => {
     }
 });
 
+
+app.put('/hotel/:id',  async (req,  res) => {
+    const id = req.params.id;
+    const data = req.body;
+    try {
+        const hotel = await db.hotel.findByPk(id);
+        if (!hotel) {
+            return res.status(404).send({ message: 'hotel not found' });
+        }
+        await hotel.update(data);
+        res.send({message: "hotel berhasil diupdate", hotel});
+    }
+    catch (error) {
+        res.send({ message: error.message });
+    }
+});

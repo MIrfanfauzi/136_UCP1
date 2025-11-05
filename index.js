@@ -29,3 +29,14 @@ app.post('/hotel', async (req, res) => {
     res.send({ message: error.message });
 });
 
+
+app.get('/hotel', async (req, res) => {
+    try {
+        const hotel = await db.hotel.findAll();
+        res.send(hotel);
+    } 
+    catch (error) {
+        res.send({ message: error.message });
+    }
+});
+

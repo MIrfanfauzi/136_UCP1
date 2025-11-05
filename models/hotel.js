@@ -5,16 +5,24 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true
     },
-    judul: {
+    Tipe_Kamar: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    penulis: {
+    Kapasitas_Tamu: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    deskripsi: {
+    Lantai: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    Fasilitas: {
         type: DataTypes.TEXT,
+        allowNull: false
+    },
+    Tanggal_Pesan: {
+        type: DataTypes.DATE,
         allowNull: false
     }
     }, {
